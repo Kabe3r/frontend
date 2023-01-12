@@ -26,7 +26,7 @@ export default function Compose() {
 			data.append("file", file);
 			newPost.photo = filename;
 			try {
-				await axios.post(url + "upload", data);
+				await axios.post(url + "/upload", data);
 			} catch (err) {}
 		}
 		try {
