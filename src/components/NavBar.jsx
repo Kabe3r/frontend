@@ -12,7 +12,7 @@ import "../style.css";
 export default function NavBar() {
   const { openSearch, closeSearch, isSearchOpen, user, dispatch, setBlog, page } = useGlobalContext();
   const { data } = useFetch();
-  const PF = "http://localhost:3000/images/";
+  const PF = "https://filthy-housecoat-dove.cyclic.app/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -72,7 +72,7 @@ export default function NavBar() {
                     <div className="hidden md:block">
                       {!user && (
                         <div className="flex items-end">
-                          {navigation.slice(3).map((item, index) => {
+                          {navigation.slice(2).map((item, index) => {
                             return (
                               <Link
                               key={index}
