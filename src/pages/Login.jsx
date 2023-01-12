@@ -4,6 +4,8 @@ import axios from "axios";
 import { Input, Button } from '../components/reuseable components';
 import "../style.css";
 
+const url = 'https://filthy-housecoat-dove.cyclic.app';
+
 export default function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
@@ -13,7 +15,7 @@ export default function Login() {
 		e.preventDefault();
 		dispatch({ type: "LOGIN_START" });
 		try {
-			const res = await axios.post("/auth/login", {
+			const res = await axios.post(url + "/auth/login", {
 				username: username,
 				password: password
 			});

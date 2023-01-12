@@ -11,7 +11,8 @@ export default function Profile () {
   const [success, setSuccess] = useState(false);
 
   const {user, dispatch} = useGlobalContext();
-  const PF = "http://localhost:3001/images/";
+  const PF = 'https://filthy-housecoat-dove.cyclic.app/images/';
+  const url = 'https://filthy-housecoat-dove.cyclic.app';
   
   // console.log(updateUser.profilePic)
   const handleSubmit = async (e) => {
@@ -30,13 +31,13 @@ export default function Profile () {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post(url + "/upload", data);
       } catch (err) {
         console.log(err)
       }
     }
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put(url + "/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
