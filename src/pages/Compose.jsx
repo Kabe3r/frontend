@@ -32,10 +32,11 @@ export default function Compose() {
 		try {
 		    const res = await axios.post(url + "/posts", newPost);
                 console.log(res)
-		    window.location.replace("/post/" + res.data._id);
+		//     window.location.replace("/post/" + res.data._id);
 		} catch (err) {}
 	};
-     
+      //https://superlative-alpaca-20c7f8.netlify.app/post/63c04a18a2b1ad9ef01e51b9
+      //https://superlative-alpaca-20c7f8.netlify.app/post/63c04a18a2b1ad9ef01e51b9
 
       return (
 
