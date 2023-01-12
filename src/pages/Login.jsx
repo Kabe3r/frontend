@@ -15,7 +15,7 @@ export default function Login() {
 		e.preventDefault();
 		dispatch({ type: "LOGIN_START" });
 		try {
-			const res = await axios.post("url + /auth/login", {
+			const res = await axios.post(url + "/auth/login", {
 				username: username,
 				password: password
 			});
