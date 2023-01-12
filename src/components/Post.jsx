@@ -3,8 +3,7 @@ import "../style.css";
 
 export default function Post({_id, title, content, username, photo, createdAt }) {
 	
-	const PF = "http://localhost:3000/images/";
-
+	const PF = "https://filthy-housecoat-dove.cyclic.app/images/";
 	return (
 		<article className="mt-20">
 		<figure>
