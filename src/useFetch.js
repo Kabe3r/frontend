@@ -3,7 +3,7 @@ import axios from "axios";
 import { paginate } from './util';
 import { useLocation } from "react-router-dom";
 
-const url = 'https://filthy-housecoat-dove.cyclic.app/api/';
+const url = 'https://filthy-housecoat-dove.cyclic.app/api';
 
 export const useFetch = () => {
       const [loading, setLoading] = useState(true);
