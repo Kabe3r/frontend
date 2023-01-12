@@ -32,7 +32,7 @@ export default function Compose() {
 		try {
 		    const res = await axios.post(url + "/posts", newPost);
                 console.log(res)
-		    window.location.replace("/post/" + res.data._id);
+		    window.location.replace(url + "/posts/" + res.data._id);
 		} catch (err) {}
 	};
      
