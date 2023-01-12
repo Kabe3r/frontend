@@ -26,7 +26,7 @@ export default function Compose() {
 			data.append("file", file);
 			newPost.photo = filename;
 			try {
-				await axios.post("/upload", data);
+				await axios.post("https://filthy-housecoat-dove.cyclic.app/upload", data);
 			} catch (err) {}
 		}
 		try {
