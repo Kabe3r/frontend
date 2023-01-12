@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context/Context";
 import axios from "axios";
 import "../style.css";
 
-const url = 'https://filthy-housecoat-dove.cyclic.app/api';
+// const url = 'https://filthy-housecoat-dove.cyclic.app/api';
 
 export default function Compose() {
       const [title, setTitle] = useState("");
