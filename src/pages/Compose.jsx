@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context/Context";
 import axios from "axios";
 import "../style.css";
 
-// const url = 'https://filthy-housecoat-dove.cyclic.app/api';
+const url = 'https://filthy-housecoat-dove.cyclic.app/api';
 
 export default function Compose() {
       const [title, setTitle] = useState("");
@@ -30,7 +30,7 @@ export default function Compose() {
 			} catch (err) {}
 		}
 		try {
-		    const res = await axios.post("/posts", newPost);
+		    const res = await axios.post(url + "/posts", newPost);
                 console.log(res)
 		    window.location.replace("/post/" + res.data._id);
 		} catch (err) {}
