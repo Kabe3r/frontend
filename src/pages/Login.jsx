@@ -4,7 +4,7 @@ import axios from "axios";
 import { Input, Button } from '../components/reuseable components';
 import "../style.css";
 
-const url = 'https://filthy-housecoat-dove.cyclic.app';
+const url = 'https://filthy-housecoat-dove.cyclic.app/api';
 
 export default function Login() {
 	const [username, setUsername] = useState("");
