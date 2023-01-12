@@ -10,7 +10,7 @@ export default function SinglePost() {
      const path = (location.pathname.split("/")[2]);
      const [post, setPost] = useState({});
      const url = 'https://filthy-housecoat-dove.cyclic.app/api';
-     const PF = "/images/";
+     const PF = "https://filthy-housecoat-dove.cyclic.app/images/";
      const { user } = useGlobalContext();
      const [ title, setTitle ] = useState("");
      const [ content, setContent ] = useState("");
