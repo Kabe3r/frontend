@@ -26,13 +26,13 @@ export default function Compose() {
 			data.append("file", file);
 			newPost.photo = filename;
 			try {
-				await axios.post(url + "/upload", data);
+				await axios.post("/upload", data);
 			} catch (err) {}
 		}
 		try {
-		    const res = await axios.post(url + "/posts", newPost);
+		    const res = await axios.post("/posts", newPost);
                 console.log(res)
-		    window.location.replace(url + "/post/" + res.data._id);
+		    window.location.replace("/post/" + res.data._id);
 		} catch (err) {}
 	};
      
