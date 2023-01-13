@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGlobalContext } from "../context/Context";
-import axios from "axios";
+import { axiosInstance } from '../config';
 import "../style.css"
 
 export default function Profile () {
@@ -12,7 +12,6 @@ export default function Profile () {
 
   const {user, dispatch} = useGlobalContext();
   const PF = 'https://filthy-housecoat-dove.cyclic.app/images/';
-  const url = 'https://filthy-housecoat-dove.cyclic.app';
   
   // console.log(updateUser.profilePic)
   const handleSubmit = async (e) => {
@@ -31,13 +30,13 @@ export default function Profile () {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post(url + "/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (err) {
         console.log(err)
       }
     }
     try {
-      const res = await axios.put(url + "/users/" + user._id, updatedUser);
+      const res = await axiosInstance.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
