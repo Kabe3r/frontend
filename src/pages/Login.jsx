@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { useGlobalContext } from "../context/Context";
-import axios from "axios";
+import { axiosInstance } from "../config";
 import { Input, Button } from '../components/reuseable components';
 import "../style.css";
-
-const url = 'https://filthy-housecoat-dove.cyclic.app/api';
 
 export default function Login() {
 	const [username, setUsername] = useState("");
@@ -15,7 +13,7 @@ export default function Login() {
 		e.preventDefault();
 		dispatch({ type: "LOGIN_START" });
 		try {
-			const res = await axios.post(url + "/auth/login", {
+			const res = await axiosInstance.post("/auth/login", {
 				username: username,
 				password: password
 			});

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import axios from "axios";
+import { axiosInstance } from "../config";
 import {Input, Button} from '../components/reuseable components';
 import "../style.css";
 
-const url = 'https://filthy-housecoat-dove.cyclic.app/api';
 
 export default function Register() {
 	const [username, setUsername] = useState("");
@@ -15,7 +14,7 @@ export default function Register() {
 		e.preventDefault();
 		setError(false);
 		try {
-			const res = await axios.post(url + "/auth/register", {
+			const res = await axiosInstance.post("/auth/register", {
 				username,
 				email,
 				password,

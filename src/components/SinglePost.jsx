@@ -2,14 +2,13 @@ import { useLocation } from "react-router";
 import {  useEffect, useState } from "react";
 import { useGlobalContext } from "../context/Context";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { axiosInstance } from '../config';
 import "../style.css";
 
 export default function SinglePost() {
      const location = useLocation();
      const path = (location.pathname.split("/")[2]);
      const [post, setPost] = useState({});
-     const url = 'https://filthy-housecoat-dove.cyclic.app/api';
      const PF = "https://filthy-housecoat-dove.cyclic.app/images/";
      const { user } = useGlobalContext();
      const [ title, setTitle ] = useState("");
@@ -18,7 +17,7 @@ export default function SinglePost() {
 
      useEffect(() => {
       const fetchPost = async () => {
-      const res = await axios.get(url + "/posts/" + path);
+      const res = await axiosInstance.get("/posts/" + path);
       setPost(res.data);
       setTitle(res.data.title);   
       setContent(res.data.content);   
@@ -28,7 +27,7 @@ export default function SinglePost() {
 
       const handleDelete = async () => {
             try {
-              await axios.delete(`${url}/posts/${post._id}` , {
+              await axiosInstance.delete(`/posts/${post._id}` , {
                 data: {username: user.username},
               });
               window.location.replace("/");
@@ -37,7 +36,7 @@ export default function SinglePost() {
 
           const handleUpdate = async () => {
             try {
-              await axios.put(`${url}/posts/${post._id}` , {
+              await axiosInstance.put(`/posts/${post._id}` , {
                 username: user.username,
                 title,
                 content
