@@ -3,7 +3,7 @@ import "../style.css";
 
 export default function Post({_id, title, content, username, photo, createdAt }) {
 	// https://filthy-housecoat-dove.cyclic.app/images/1673545698313profile-removebg-preview.png
-	const PF = "https://filthy-housecoat-dove.cyclic.app/images/";
+	const PF = "https://superlative-alpaca-20c7f8.netlify.app/images/";
 	return (
 		<article className="mt-20">
 		<figure>
