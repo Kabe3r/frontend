@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../style.css";
 
 export default function Post({_id, title, content, username, photo, createdAt }) {
-	
+	// https://filthy-housecoat-dove.cyclic.app/images/1673545698313profile-removebg-preview.png
 	const PF = "https://filthy-housecoat-dove.cyclic.app/images/";
 	return (
 		<article className="mt-20">
